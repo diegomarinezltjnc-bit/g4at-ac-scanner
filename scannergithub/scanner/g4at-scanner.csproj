@@ -8,6 +8,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyName>g4at-ac-scanner</AssemblyName>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
     <!-- un solo .exe autocontenido (se publica con el script de abajo) -->
     <PublishSingleFile>true</PublishSingleFile>
     <SelfContained>true</SelfContained>
