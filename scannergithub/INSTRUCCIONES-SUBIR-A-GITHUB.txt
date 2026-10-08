@@ -1,0 +1,40 @@
+=====================================================
+ SUBIR EL SCANNER A GITHUB  (para que compile el .exe)
+=====================================================
+Tu repo ya está creado:  github.com/diegomarinezltjnc-bit/g4at-ac-scanner
+La licencia ya está horneada en scanner/config.json.
+
+------------------------------------------------------
+PASO 1 — Subir los archivos del scanner
+------------------------------------------------------
+1) Descomprime este .zip. Verás una carpeta "scanner" y una carpeta ".github".
+2) Entra a:  https://github.com/diegomarinezltjnc-bit/g4at-ac-scanner
+3) Haz clic en el enlace  "uploading an existing file"
+   (o botón "Add file" -> "Upload files").
+4) ARRASTRA la carpeta  "scanner"  completa a la zona de carga.
+   GitHub mantiene las subcarpetas solo.
+5) Abajo, escribe un mensaje cualquiera y pulsa  "Commit changes".
+
+------------------------------------------------------
+PASO 2 — Añadir el archivo que compila (el workflow)
+------------------------------------------------------
+La carpeta ".github" empieza con punto y a veces no se puede arrastrar.
+Hazlo así (seguro):
+1) En tu repo, "Add file" -> "Create new file".
+2) En el nombre, escribe EXACTAMENTE:
+      .github/workflows/build-scanner.yml
+   (al escribir las barras, GitHub crea las carpetas solo)
+3) Abre el archivo ".github/workflows/build-scanner.yml" de este zip,
+   copia TODO su contenido y pégalo.
+4) Pulsa  "Commit changes".
+
+------------------------------------------------------
+PASO 3 — Esperar la compilación
+------------------------------------------------------
+1) Ve a la pestaña  "Actions"  de tu repo.
+2) Verás "Compilar scanner (.exe)" corriendo (~2-3 min).
+3) Cuando termine (check verde), ve a  "Releases" (lado derecho)
+   -> "scanner-latest" -> descarga  g4at-ac-scanner.exe
+
+Ese .exe ya apunta a https://g4atac.shop con tu licencia.
+Avísame cuando lo tengas y montamos el link por caso en el panel.
