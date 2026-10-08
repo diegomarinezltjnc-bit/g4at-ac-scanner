@@ -1,0 +1,42 @@
+name: Compilar scanner (.exe)
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v4
+
+      - name: Instalar .NET 8 SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Compilar el .exe (un solo archivo, autocontenido)
+        working-directory: scannergithub/scanner
+        run: >
+          dotnet publish g4at-scanner.csproj -c Release -r win-x64
+          -p:PublishSingleFile=true -p:SelfContained=true
+          -p:IncludeNativeLibrariesForSelfExtract=true
+
+      - name: Subir el .exe como artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: g4at-ac-scanner
+          path: scannergithub/scanner/bin/Release/net8.0-windows/win-x64/publish/g4at-ac-scanner.exe
+
+      - name: Publicar el .exe en Releases
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: scanner-latest
+          name: Scanner (ultima compilacion)
+          files: scannergithub/scanner/bin/Release/net8.0-windows/win-x64/publish/g4at-ac-scanner.exe
+          fail_on_unmatched_files: true
